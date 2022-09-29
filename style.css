@@ -1,29 +1,41 @@
-/* Globals */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+/* GLOBALS */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
-html, body {
+html,
+body {
   margin: 0px;
   padding: 0px;
   min-height: 100vh;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 a {
   text-decoration: none;
 }
 
+button {
+  background-color: transparent;
+  border: 0px;
+  cursor: pointer;
+}
+
 .flex {
   display: flex;
 }
 
+/* HEADER */
+
 header {
   padding: 1rem;
+  justify-content: space-between;
 }
 
 header .logo {
   font-size: 21px;
   font-weight: 700;
 }
+
+/* Navigation */
 
 nav {
   margin-left: auto;
@@ -36,42 +48,87 @@ nav a {
   font-weight: 500;
   text-transform: uppercase;
   padding: 0px 15px;
-
 }
 
-.navigation-bar nav a.active {
-  color: #5A47AB;
+nav a.active {
+  font-weight: 700;
 }
 
-.menu-toggle {
-  display: none;
+/* Mobile Navigation */
+
+.mobile-nav-toggle span {
+  background-color: #282828;
+  display: block;
+  height: 1.5px;
+  width: 30px;
+  margin: 8px;
 }
 
-.mobile-nav {
-  display: none;
-  background-color: lightpink;
+#mobile-nav {
+  background-color: #282828;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  padding: 1rem;
+  padding: 2rem 2rem 1rem 1rem;
 }
 
-.mobile-nav > div {
+#mobile-nav > div {
   text-align: right;
 }
 
-.mobile-nav a {
+#mobile-nav a {
   display: block;
   margin: 16px 0px;
+  color: whitesmoke;
 }
 
-@media (max-width: 750px)  {
-  .mobile-nav, .menu-toggle {
+#mobile-nav .close-button-wrapper {
+  justify-content: end;
+}
+
+#mobile-nav .close-button {
+  height: 30px;
+}
+
+#mobile-nav .close-button span {
+  background-color: lightblue;
+  display: block;
+  height: 1.5px;
+  width: 30px;
+  margin: 8px;
+  margin: auto;
+}
+
+#mobile-nav .close-button .line-1 {
+  transform: rotate(45deg);
+}
+#mobile-nav .close-button .line-2 {
+  transform: rotate(135deg);
+}
+
+/* UTILITIES */
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
+}
+
+/* Media Queries */
+
+@media (max-width: 750px) {
+  .mobile-nav-toggle {
     display: block;
   }
 
   .desktop-nav {
+    display: none;
+  }
+}
+@media (min-width: 750px) {
+  #mobile-nav {
     display: none;
   }
 }
